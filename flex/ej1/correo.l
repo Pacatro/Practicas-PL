@@ -6,30 +6,44 @@
     es un correo electronico o no    
     Ejemplo: usuario@entidad.ext
     */
+    int cont = 0;
 %}
 
 letra [a-zA-Z]
 numero [0-9]
-simbolo [\.\_{0,1}]
+simbolo [\.\_?]
 
-/* Empieza por una letra, sigue por varias letras o numeros o simbolos, 
-/* pero que _ solo aparezca , termina con una letra o un numero */
 usuario {letra}({letra}|{numero}|{simbolo})*({letra}|{numero})
-/* Empiza por una letra y le siguen cero o mas letras */
 entidad {letra}({letra})*
-/* Empiza por una o tres letra */
 ext {letra}{1,3}
-email {usuario}\@{entidad}\.{ext}
+
+correo {usuario}\@{entidad}\.{ext}
 
 %%
 
-{email}    { printf("%s es un email valido\n", yytext); }
+{correo}    { cont++; }
 
-.          { printf("No es un email valido\n"); }
+.*          { printf("%s no es un email valido\n", yytext); }
 
 %%
 
-int main() {
+extern FILE *yyin, *yyout;
+
+int main(int argc, char **argv) {
+    if(argc > 3 || argc < 2) {
+        printf("Error: Numero invalido de paramtros.\n");
+        return -1;
+    }
+
+    switch(argc) {
+        case 2: yyin = fopen(argv[1], "r"); break;
+        case 3: yyin = fopen(argv[1], "r");
+                yyout = fopen(argv[2], "w");
+    }
+
     yylex();
+
+    printf("\nNumero de correos validos: %d\n", cont);
+
     return 0;
 }
