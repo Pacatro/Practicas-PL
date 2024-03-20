@@ -11,9 +11,9 @@
 
 letra [a-zA-Z]
 numero [0-9]
-simbolo [\.\_?]
+simbolo [\.\_]
 
-usuario {letra}({letra}|{numero}|{simbolo})*({letra}|{numero})
+usuario {letra}({letra}|{numero}|{simbolo}({letra}|{numero}))*
 entidad {letra}{letra}*
 ext {letra}{1,3}
 
