@@ -14,16 +14,16 @@ numero [0-9]
 simbolo [\.\_?]
 
 usuario {letra}({letra}|{numero}|{simbolo})*({letra}|{numero})
-entidad {letra}({letra})*
+entidad {letra}{letra}*
 ext {letra}{1,3}
 
-correo {usuario}\@{entidad}\.{ext}
+correo {usuario}@{entidad}.{ext}
 
 %%
 
-{correo}    { cont++; }
+{correo}    { cont++; printf("%s es un correo valido\n", yytext); }
 
-.*          { printf("%s no es un email valido\n", yytext); }
+.*          { printf("%s no es un correo valido\n", yytext); }
 
 %%
 
