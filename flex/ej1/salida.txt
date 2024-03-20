@@ -1,0 +1,17 @@
+i32gavap@uco.es: correo valido
+
+carmen.lara@empresa.com: correo valido
+
+pablo.luque_19@ayuda.org: correo valido
+
+1jefe@ejemplo.es: correo invalido
+
+error__1@ejemplo.es1: correo invalido
+
+error2_@ejemplo.12: correo invalido
+
+i12almuf@uco.epsc: correo invalido
+
+error__algo@ejemplo.es: correo invalido
+
+Numero de correos validos: 3

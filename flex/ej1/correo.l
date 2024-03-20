@@ -21,9 +21,9 @@ correo {usuario}@{entidad}.{ext}
 
 %%
 
-{correo}    { cont++; printf("%s es un correo valido\n", yytext); }
+{correo}    { cont++; fprintf(yyout, "%s: correo valido\n", yytext); }
 
-.*          { printf("%s no es un correo valido\n", yytext); }
+.*          { fprintf(yyout, "%s: correo invalido\n", yytext); }
 
 %%
 
@@ -31,7 +31,7 @@ extern FILE *yyin, *yyout;
 
 int main(int argc, char **argv) {
     if(argc > 3 || argc < 2) {
-        printf("Error: Numero invalido de paramtros.\n");
+        printf("Error: Numero invalido de parametros.\n");
         return -1;
     }
 
@@ -43,7 +43,7 @@ int main(int argc, char **argv) {
 
     yylex();
 
-    printf("\nNumero de correos validos: %d\n", cont);
-
+    fprintf(yyout, "\nNumero de correos validos: %d\n", cont);
+    
     return 0;
 }
