@@ -2,10 +2,11 @@
 
 %{
     /* Descripcion
-    El analizador distingue si una figura geometrica
-    es un triangulo, cuadrado o circulo 
-    y calcula su perimetro y area
+    El analizador distingue si una cadena 
+    es un correo electronico o no    
+    Ejemplo: usuario@entidad.ext
     */
+
     int cont = 0;
 %}
 

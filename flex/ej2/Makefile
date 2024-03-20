@@ -1,4 +1,4 @@
-# Si se desea generar ejemplo1.exe entonces teclear 
+# Si se desea generar ejemplo7.exe entonces teclear 
 #  make
 #
 # Si se desea generar otro "ejemplo" entonces teclear 
@@ -27,21 +27,31 @@ LFLAGS = -lfl
 ################################################################
 
 ##
-$(NAME).exe: $(NAME).o
+# MODIFICADO
+$(NAME).exe: $(NAME).o auxiliar.o
 	@echo "Generating" $@
-	@gcc $< $(LFLAGS) -o $@
+	@gcc $^ $(LFLAGS) -o $@ -lm
 
-$(NAME).o: lex.yy.c
-	@echo "Compiling" $< "and generating" $@
-	@gcc $(CFLAGS) $< -o $@
-	@echo "--> Deleting the auxilary file: lex.yy.c"
-	@rm -f lex.yy.c 
+# NUEVO
+main.o: main.c token.h
+	@echo "Compiling" $<" and generating" $@
+	@gcc $(CFLAGS) $< -o $@ -lm
 
-lex.yy.c: $(NAME).l
+
+# NUEVO
+auxiliar.o: auxiliar.c token.h
+	@echo "Compiling" $<" and generating" $@
+	@gcc $(CFLAGS) $< -o $@ -lm
+
+$(NAME).o: lex.yy.c token.h
+	@echo "Compiling" $<" and generating" $@
+	@gcc $(CFLAGS) $< $(LFLAGS) -o $@ -lm
+
+lex.yy.c: $(NAME).l token.h
 	@echo "Generating" $@
 	@flex $<
 
 .PHONY: clean
 clean:
-	@echo "--> Deleting object files"
-	@rm -f lex.yy.c *.o
+	@echo Deleting auxiliary files
+	@rm -f lex.yy.c *.o  
