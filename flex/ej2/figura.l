@@ -14,6 +14,7 @@
     #define PI 3.14159265358979323846
 
     float x1, y1, x2, y2, x3, y3, r;
+    int cont = 0;
 %}
 
 digito [0-9]
@@ -25,7 +26,9 @@ circulo c(i|í)rculo[ ]\({numero}[ ]{numero}\)[ ]{numero}
 
 %%
 {triangulo} {
-    printf("Figura reconocida -> Triangulo\n"); 
+    cont++;
+
+    fprintf(yyout, "Figura reconocida -> %s\n", yytext); 
     
     if(sscanf(yytext, "triángulo (%f %f) (%f %f) (%f %f)", &x1, &y1, &x2, &y2, &x3, &y3) == 0) {
         sscanf(yytext, "triangulo (%f %f) (%f %f) (%f %f)", &x1, &y1, &x2, &y2, &x3, &y3);
@@ -37,15 +40,17 @@ circulo c(i|í)rculo[ ]\({numero}[ ]{numero}\)[ ]{numero}
 
     float perimetro = lado1 + lado2 + lado3;
 
-    printf("Perimetro: %f\n", perimetro);
+    fprintf(yyout, "Perimetro: %f\n", perimetro);
 
     float area = areaTriangulo(x1, y1, x2, y2, x3, y3);
 
-    printf("Area: %f\n", area);
+    fprintf(yyout, "Area: %f\n", area);
 }
 
 {cuadrado} {
-    printf("Figura reconocida -> Cuadrado\n");
+    cont++;
+
+    fprintf(yyout, "Figura reconocida -> %s\n", yytext);
 
     sscanf(yytext, "cuadrado (%f %f) (%f %f)", &x1, &y1, &x2, &y2);
 
@@ -53,15 +58,17 @@ circulo c(i|í)rculo[ ]\({numero}[ ]{numero}\)[ ]{numero}
 
     float perimetro = 4.0*lado;
 
-    printf("Perimetro: %f\n", perimetro);
+    fprintf(yyout, "Perimetro: %f\n", perimetro);
 
     float area = areaCuadrado(lado);
 
-    printf("Area: %f\n", area);
+    fprintf(yyout, "Area: %f\n", area);
 }
 
 {circulo} {
-    printf("Figura reconocida -> Circulo\n");
+    cont++;
+
+    fprintf(yyout, "Figura reconocida -> %s\n", yytext);
 
     if(sscanf(yytext, "círculo (%f %f) %f", &x1, &y1, &r) == 0) {
         sscanf(yytext, "circulo (%f %f) %f", &x1, &y1, &r);
@@ -69,22 +76,23 @@ circulo c(i|í)rculo[ ]\({numero}[ ]{numero}\)[ ]{numero}
 
     float perimetro = PI * (r*r);
 
-    printf("Perimetro: %f\n", perimetro);
+    fprintf(yyout, "Perimetro: %f\n", perimetro);
 
     float area = areaCirculo(r);
 
-    printf("Area: %f\n", area);
+    fprintf(yyout, "Area: %f\n", area);
 
 }
 
-.* { printf("Figura no reconocida"); }
+.* { fprintf(yyout, "Error: Figura no reconocida -> %s\n", yytext); }
+
 %%
 
 extern FILE *yyin, *yyout;
 
 int main(int argc, char **argv) {
     if(argc > 3 || argc < 1) {
-        printf("Error: Numero invalido de parametros.\n");
+        fprintf(yyout, "Error: Numero invalido de parametros.\n");
         return -1;
     }
 
@@ -95,6 +103,8 @@ int main(int argc, char **argv) {
     }
 
     yylex();
+
+    fprintf(yyout, "\n%d figuras reconocidas\n", cont);
 
     return 0;
 }

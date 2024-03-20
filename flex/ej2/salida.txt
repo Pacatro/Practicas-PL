@@ -1,0 +1,21 @@
+Figura reconocida -> triángulo (0.0 0.0) (1.0 0.0) (1.0 1.0)
+Perimetro: 3.414214
+Area: 0.500000
+
+Figura reconocida -> triangulo (0.0 0.0) (1.0 0.0) (1.0 1.0)
+Perimetro: 3.414214
+Area: 0.500000
+
+Figura reconocida -> cuadrado (0.0 0.0) (1.0 1.0)
+Perimetro: 5.656854
+Area: 2.000000
+
+Figura reconocida -> círculo (0.0 0.0) 1.0
+Perimetro: 3.141593
+Area: 6.283185
+
+Figura reconocida -> circulo (0.0 0.0) 1.0
+Perimetro: 3.141593
+Area: 6.283185
+
+Figura no reconocida -> rectangulo (0.0 0.0) (1.0 1.0)
