@@ -2,9 +2,9 @@
 
 %{
     /* Descripcion
-    El analizador distingue si una figura geometrica
-    es un triangulo, cuadrado o circulo 
-    y calcula su perimetro y area
+    El analizador distingue si una cadena 
+    es un correo electronico o no    
+    Ejemplo: usuario@entidad.ext
     */
     int cont = 0;
 %}
@@ -30,7 +30,7 @@ correo {usuario}@{entidad}.{ext}
 extern FILE *yyin, *yyout;
 
 int main(int argc, char **argv) {
-    if(argc > 3 || argc < 1) {
+    if(argc > 3 || argc < 2) {
         printf("Error: Numero invalido de parametros.\n");
         return -1;
     }
