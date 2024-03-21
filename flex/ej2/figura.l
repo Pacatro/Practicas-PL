@@ -84,7 +84,7 @@ circulo c(i|í)rculo[ ]\({numero}[ ]{numero}\)[ ]{numero}
 
 }
 
-\# { fprintf(yyout, "%d figuras reconocidas\n", cont); return; }
+\# { fprintf(yyout, "%d figuras reconocidas\n", cont); return 0; }
 
 .* { fprintf(yyout, "Error: Figura no reconocida -> %s\n", yytext); }
 
