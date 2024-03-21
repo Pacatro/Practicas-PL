@@ -1,4 +1,4 @@
-# Si se desea generar ejemplo7.exe entonces teclear 
+# Si se desea generar comentario-AFD-1.exe entonces teclear 
 #  make
 #
 # Si se desea generar otro "ejemplo" entonces teclear 
@@ -27,31 +27,22 @@ LFLAGS = -lfl
 ################################################################
 
 ##
-# MODIFICADO
-$(NAME).exe: $(NAME).o auxiliar.o
+$(NAME).exe: $(NAME).o
 	@echo "Generating" $@
-	@gcc $^ $(LFLAGS) -o $@
+	@gcc $< $(LFLAGS) -o $@
 
-# NUEVO
-main.o: main.c token.h
-	@echo "Compiling" $<" and generating" $@
+$(NAME).o: lex.yy.c
+	@echo "Compiling" $< "and generating" $@
 	@gcc $(CFLAGS) $< -o $@
+	@echo "--> Deleting the auxilary file: lex.yy.c"
+	@rm -f lex.yy.c 
 
-
-# NUEVO
-auxiliar.o: auxiliar.c token.h
-	@echo "Compiling" $<" and generating" $@
-	@gcc $(CFLAGS) $< -o $@
-
-$(NAME).o: lex.yy.c token.h
-	@echo "Compiling" $<" and generating" $@
-	@gcc $(CFLAGS) $< $(LFLAGS) -o $@
-
-lex.yy.c: $(NAME).l token.h
+lex.yy.c: $(NAME).l
 	@echo "Generating" $@
 	@flex $<
 
-.PHONY: clean
 clean:
-	@echo Deleting auxiliary files
-	@rm -f lex.yy.c *.o  
+	@echo "--> Deleting object files"
+	@rm -f lex.yy.c *.o
+
+

@@ -7,9 +7,46 @@
     */
 %}
 
-%x Q0 Q1 Q2
+%x Q1 Q2
 
 %%
+
+"encender" { 
+    BEGIN(Q1);
+    fprintf(yyout, "Coche encendido\n");
+}
+
+<Q1>"acelerar" { 
+    fprintf(yyout, "Acelerando... (Q1)\n");
+    /* Se mantiene en Q1 */
+}
+
+<Q1>"frenar" { 
+    fprintf(yyout, "Frenando... (Q1)\n");
+    /* Se mantiene en Q1 */ 
+}
+
+<Q1>"apagar" {
+    BEGIN(INITIAL);
+    fprintf(yyout, "Coche apagado\n");
+}
+
+<Q1>"embragar" {
+    fprintf(yyout, "Embragando... (Pasa a Q2)\n");
+    BEGIN(Q2);
+}
+
+<Q2>"frenar" {
+    fprintf(yyout, "Frenando... (Q2)\n");
+    /* Se mantiene en Q2 */
+}
+
+<Q2>"cambiar" {
+    fprintf(yyout, "Cambiando... (Pasa a Q1)\n");
+    BEGIN(Q1);
+}
+
+.* { fprintf(yyout, "Orden no valida: %s\n", yytext); }
 
 %%
 
@@ -28,8 +65,6 @@ int main(int argc, char **argv) {
     }
 
     yylex();
-
-    fprintf(yyout, "\n%d figuras reconocidas\n", cont);
 
     return 0;
 }

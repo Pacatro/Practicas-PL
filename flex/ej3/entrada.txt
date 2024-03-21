@@ -1,0 +1,8 @@
+levantar
+encender
+acelerar
+frenar
+embragar
+frenar
+cambiar
+apagar

@@ -1,0 +1,15 @@
+Orden no valida: levantar
+
+Coche encendido
+
+Acelerando... (Q1)
+
+Frenando... (Q1)
+
+Embragando... (Pasa a Q2)
+
+Frenando... (Q2)
+
+Cambiando... (Pasa a Q1)
+
+Coche apagado
