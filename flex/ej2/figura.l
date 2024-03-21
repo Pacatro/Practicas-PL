@@ -1,4 +1,4 @@
-/*** correo.l ***/
+/*** figura.l ***/
 
 %{
     /* Descripcion
