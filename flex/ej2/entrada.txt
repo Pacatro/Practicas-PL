@@ -4,3 +4,4 @@ cuadrado (0.0 0.0) (1.0 1.0)
 círculo (0.0 0.0) 1.0
 circulo (0.0 0.0) 1.0
 rectangulo (0.0 0.0) (1.0 1.0)
+#
