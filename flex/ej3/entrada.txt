@@ -6,3 +6,7 @@ embragar
 frenar
 cambiar
 apagar
+encender
+encender
+embragar
+apagar

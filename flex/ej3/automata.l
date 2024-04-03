@@ -16,6 +16,15 @@
     fprintf(yyout, "Coche encendido\n");
 }
 
+"apagar" {
+    fprintf(yyout, "Secuencia incorrecta\n");
+}
+
+<Q1>"encender" { 
+    fprintf(yyout, "Secuencia incorrecta (Q1)\n");
+    /* Se mantiene en Q1 */
+}
+
 <Q1>"acelerar" { 
     fprintf(yyout, "Acelerando... (Q1)\n");
     /* Se mantiene en Q1 */
@@ -44,6 +53,11 @@
 <Q2>"cambiar" {
     fprintf(yyout, "Cambiando... (Pasa a Q1)\n");
     BEGIN(Q1);
+}
+
+<Q2>"apagar" { 
+    fprintf(yyout, "Secuencia incorrecta (Q2)\n");
+    /* Se mantiene en Q2 */
 }
 
 .* { fprintf(yyout, "Orden no valida: %s\n", yytext); }
