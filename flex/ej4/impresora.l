@@ -3,8 +3,7 @@
 %{
     /*Descripcion
     Codificacion de un analizador lexico para simular
-    el comportamiento de una impresora
-    */
+    el comportamiento de una impresora*/
 
     #include <stdbool.h>
     #include <string.h>

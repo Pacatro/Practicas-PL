@@ -1,0 +1,19 @@
+Fecha reconocida (Pasa a Q1)
+ Hora reconocida (Pasa a Q2)
+Fichero reconocido (Pasa a Q0)
+
+Fecha reconocida (Pasa a Q1)
+ Hora reconocida (Pasa a Q2)
+Fichero reconocido (Pasa a Q0)
+
+Fecha reconocida (Pasa a Q1)
+ Hora reconocida (Pasa a Q2)
+Fichero reconocido (Pasa a Q0)
+
+Fecha reconocida (Pasa a Q1)
+ Hora reconocida (Pasa a Q2)
+Fichero reconocido (Pasa a Q0)
+
+Fecha no valida: 29-02-2023
+
+Numero de documentos enviados: 4
