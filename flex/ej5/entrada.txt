@@ -1,9 +1,3 @@
-<< esto es
-un comentario
-multilinea >>
-
-!! Comentario normal
-
 inicio
     hola := 2;
     leer(HOLA);
