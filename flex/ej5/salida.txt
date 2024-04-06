@@ -1,0 +1,168 @@
+Comentario de una linea reconocido --> !! Programa que calcula la raíz de un numero usando método de Newton
+>Comentario multilinea reconocido --> >>
+Token reconococido --> inicio (257)
+
+Comentario de una linea reconocido --> !! Se pide el numero al que calcular la raíz.
+Token reconococido --> escribir (260)
+
+Token reconococido --> ( (299)
+
+Cadena reconocida: Introduce un numero positivo: 
+Token reconococido --> ) (300)
+
+Token reconococido --> ; (298)
+
+Token reconococido --> leer (259)
+
+Token reconococido --> ( (299)
+
+Identificador reconococido --> numero
+Token reconococido --> ) (300)
+
+Token reconococido --> ; (298)
+
+Token reconococido --> si (261)
+
+Token reconococido --> ( (299)
+
+Identificador reconococido --> numero
+Operador reconococido --> < (289)
+
+Numero reconococido --> 0
+Token reconococido --> ) (300)
+
+Token reconococido --> entonces (262)
+
+Token reconococido --> escribir (260)
+
+Token reconococido --> ( (299)
+
+Cadena reconocida: El numero no puede ser negativo
+Operador reconococido --> || (288)
+
+Cadena reconocida: \n
+Token reconococido --> ) (300)
+
+Token reconococido --> ; (298)
+
+Token reconococido --> si_no (263)
+
+Comentario de una linea reconocido --> !! Se pide el numero de iteraciones.
+Token reconococido --> escribir (260)
+
+Token reconococido --> ( (299)
+
+Cadena reconocida: Introduce el numero de iteraciones: 
+Token reconococido --> ) (300)
+
+Token reconococido --> ; (298)
+
+Token reconococido --> leer (259)
+
+Token reconococido --> ( (299)
+
+Identificador reconococido --> iteraciones
+Token reconococido --> ) (300)
+
+Token reconococido --> ; (298)
+
+Comentario de una linea reconocido --> !! Comienzan las iteraciones.
+Identificador reconococido --> x0
+Operador reconococido --> := (274)
+
+Token reconococido --> ( (299)
+
+Identificador reconococido --> numero
+Operador reconococido --> + (279)
+
+Numero reconococido --> 1.0
+Token reconococido --> ) (300)
+
+Operador reconococido --> / (284)
+
+Numero reconococido --> 2.0
+Token reconococido --> ; (298)
+
+Identificador reconococido --> i
+Operador reconococido --> := (274)
+
+Numero reconococido --> 1
+Token reconococido --> ; (298)
+
+Token reconococido --> repetir (268)
+
+Identificador reconococido --> x0
+Operador reconococido --> := (274)
+
+Numero reconococido --> 0.5
+Operador reconococido --> * (283)
+
+Token reconococido --> ( (299)
+
+Identificador reconococido --> x0
+Operador reconococido --> + (279)
+
+Identificador reconococido --> numero
+Operador reconococido --> / (284)
+
+Identificador reconococido --> x0
+Token reconococido --> ) (300)
+
+Token reconococido --> ; (298)
+
+Identificador reconococido --> i
+Operador reconococido --> := (274)
+
+Identificador reconococido --> i
+Operador reconococido --> + (279)
+
+Numero reconococido --> 1
+Token reconococido --> ; (298)
+
+Token reconococido --> hasta_que (269)
+
+Token reconococido --> ( (299)
+
+Identificador reconococido --> i
+Operador reconococido --> > (291)
+
+Identificador reconococido --> iteraciones
+Token reconococido --> ) (300)
+
+Token reconococido --> ; (298)
+
+Token reconococido --> escribir (260)
+
+Token reconococido --> ( (299)
+
+Cadena reconocida: La aproximacion a la raiz cuadrada de 
+Token reconococido --> ) (300)
+
+Token reconococido --> ; (298)
+
+Token reconococido --> escribir (260)
+
+Token reconococido --> ( (299)
+
+Identificador reconococido --> numero
+Operador reconococido --> || (288)
+
+Cadena reconocida:  es 
+Operador reconococido --> || (288)
+
+Identificador reconococido --> x0
+Operador reconococido --> || (288)
+
+Cadena reconocida: \n
+Token reconococido --> ) (300)
+
+Token reconococido --> ; (298)
+
+Token reconococido --> fin_si (264)
+
+Token reconococido --> ; (298)
+
+Token reconococido --> fin (258)
+
+Token reconococido --> ; (298)
+

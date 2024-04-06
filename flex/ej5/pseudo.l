@@ -18,7 +18,7 @@ cadena \'([^'\\]|\\.)*\'
 %%
 
 !!.* {
-    /* fprintf(yyout, "Comentario de una linea reconocido "); */
+    fprintf(yyout, "Comentario de una linea reconocido --> %s\n", yytext);
 }
 
 "<<" {
@@ -32,196 +32,196 @@ cadena \'([^'\\]|\\.)*\'
 
 <Q1>">>" {
     /* yymore(); */
-    /* fprintf(yyout, "Comentario multilinea reconocido "); */
+    fprintf(yyout, "Comentario multilinea reconocido --> %s\n", yytext);
     BEGIN(INITIAL);
 }
 
-inicio {
-    /* fprintf(yyout, "INICIO (%d) ", INICIO); */
+inicio|INICIO {
+    fprintf(yyout, "Token reconococido --> %s (%d)\n\n", yytext, INICIO);
 }
 
-fin {
-    fprintf(yyout, "Analisis lexico finalizado con exito");
+fin|FIN {
+    fprintf(yyout, "Token reconococido --> %s (%d)\n\n", yytext, FIN);
 }
 
-leer {
-    /* fprintf(yyout, "LEER (%d) ", LEER); */
+leer|LEER {
+    fprintf(yyout, "Token reconococido --> %s (%d)\n\n", yytext, LEER);
 }
 
-escribir {
-    /* fprintf(yyout, "ESCRIBIR (%d) ", ESCRIBIR); */
+escribir|ESCRIBIR {
+    fprintf(yyout, "Token reconococido --> %s (%d)\n\n", yytext, ESCRIBIR);
 }
 
-si {
-    /* fprintf(yyout, "SI (%d) ", SI); */
+si|SI {
+    fprintf(yyout, "Token reconococido --> %s (%d)\n\n", yytext, SI);
 }
 
-entonces {
-    /* fprintf(yyout, "ENTONCES (%d) ", ENTONCES); */
+entonces|ENTONCES {
+    fprintf(yyout, "Token reconococido --> %s (%d)\n\n", yytext, ENTONCES);
 }
 
-si_no {
-    /* fprintf(yyout, "SI_NO (%d) ", SI_NO); */
+si_no|SI_NO {
+    fprintf(yyout, "Token reconococido --> %s (%d)\n\n", yytext, SI_NO);
 }
 
-fin_si {
-    /* fprintf(yyout, "FIN_SI (%d) ", FIN_SI); */
+fin_si|FIN_SI {
+    fprintf(yyout, "Token reconococido --> %s (%d)\n\n", yytext, FIN_SI);
 }
 
-mientras {
-    /* fprintf(yyout, "MIENTRAS (%d) ", MIENTRAS); */
+mientras|MIENTRAS {
+    fprintf(yyout, "Token reconococido --> %s (%d)\n\n", yytext, MIENTRAS);
 }
 
-hacer {
-    /* fprintf(yyout, "HACER (%d) ", HACER); */
+hacer|HACER {
+    fprintf(yyout, "Token reconococido --> %s (%d)\n\n", yytext, HACER);
 }
 
-fin_mientras {
-    /* fprintf(yyout, "FIN_MIENTRAS (%d) ", FIN_MIENTRAS); */
+fin_mientras|FIN_MIENTRAS {
+    fprintf(yyout, "Token reconococido --> %s (%d)\n\n", yytext, FIN_MIENTRAS);
 }
 
-repetir {
-    /* fprintf(yyout, "REPETIR (%d) ", REPETIR); */
+repetir|REPETIR {
+    fprintf(yyout, "Token reconococido --> %s (%d)\n\n", yytext, REPETIR);
 }
 
-hasta_que {
-    /* fprintf(yyout, "HASTA_QUE (%d) ", HASTA_QUE); */
+hasta_que|HASTA_QUE {
+    fprintf(yyout, "Token reconococido --> %s (%d)\n\n", yytext, HASTA_QUE);
 }
 
-para {
-    /* fprintf(yyout, "PARA (%d) ", PARA); */
+para|PARA {
+    fprintf(yyout, "Token reconococido --> %s (%d)\n\n", yytext, PARA);
 }
 
-desde {
-    /* fprintf(yyout, "DESDE (%d) ", DESDE); */
+desde|DESDE {
+    fprintf(yyout, "Token reconococido --> %s (%d)\n\n", yytext, DESDE);
 }
 
-hasta {
-    /* fprintf(yyout, "HASTA (%d) ", HASTA); */
+hasta|HASTA {
+    fprintf(yyout, "Token reconococido --> %s (%d)\n\n", yytext, HASTA);
 }
 
-paso {
-    /* fprintf(yyout, "PASO (%d) ", PASO); */
+paso|PASO {
+    fprintf(yyout, "Token reconococido --> %s (%d)\n\n", yytext, PASO);
 }
 
-fin_para {
-    /* fprintf(yyout, "FIN_PARA (%d) ", FIN_PARA); */
+fin_para|FIN_PARA {
+    fprintf(yyout, "Token reconococido --> %s (%d)\n\n", yytext, FIN_PARA);
 }
 
 ":=" {
-    /* fprintf(yyout, "ASIGNACION (%d) ", ASIGNACION); */
+    fprintf(yyout, "Operador reconococido --> %s (%d)\n\n", yytext, ASIGNACION);
 }
 
 "+=" {
-    /* fprintf(yyout, "ASIGNACIONSUMA (%d) ", ASIGNACIONSUMA); */
+    fprintf(yyout, "Operador reconococido --> %s (%d)\n\n", yytext, ASIGNACIONSUMA);
 }
 
 "-=" {
-    /* fprintf(yyout, "ASIGNACIONRESTA (%d) ", ASIGNACIONRESTA); */
+    fprintf(yyout, "Operador reconococido --> %s (%d)\n\n", yytext, ASIGNACIONRESTA);
 }
 
 "*=" {
-    /* fprintf(yyout, "ASIGNACIONPRODUCTO (%d) ", ASIGNACIONPRODUCTO); */
+    fprintf(yyout, "Operador reconococido --> %s (%d)\n\n", yytext, ASIGNACIONPRODUCTO);
 }
 
 "/=" {
-    /* fprintf(yyout, "ASIGNACIONDIVISION (%d) ", ASIGNACIONDIVISION); */
+    fprintf(yyout, "Operador reconococido --> %s (%d)\n\n", yytext, ASIGNACIONDIVISION);
 }
 
 "+"  {
-    /* fprintf(yyout, "SUMA (%d) ", SUMA); */
+    fprintf(yyout, "Operador reconococido --> %s (%d)\n\n", yytext, SUMA);
 }
 
 "++" {
-    /* fprintf(yyout, "INCREMENTO (%d) ", INCREMENTO); */
+    fprintf(yyout, "Operador reconococido --> %s (%d)\n\n", yytext, INCREMENTO);
 }
 
 "-"  {
-    /* fprintf(yyout, "RESTA (%d) ", RESTA); */
+    fprintf(yyout, "Operador reconococido --> %s (%d)\n\n", yytext, RESTA);
 }
 
 "--" {
-    /* fprintf(yyout, "DECREMENTO (%d) ", DECREMENTO); */
+    fprintf(yyout, "Operador reconococido --> %s (%d)\n\n", yytext, DECREMENTO);
 }
 
 "*"  {
-    /* fprintf(yyout, "PRODUCTO (%d) ", PRODUCTO); */
+    fprintf(yyout, "Operador reconococido --> %s (%d)\n\n", yytext, PRODUCTO);
 }
 
 "/"  {
-    /* fprintf(yyout, "DIVISION (%d) ", DIVISION); */
+    fprintf(yyout, "Operador reconococido --> %s (%d)\n\n", yytext, DIVISION);
 }
 
 "//" {
-    /* fprintf(yyout, "DIVISION_ENTERA (%d) ", DIVISION_ENTERA); */
+    fprintf(yyout, "Operador reconococido --> %s (%d)\n\n", yytext, DIVISION_ENTERA);
 }
 
 "%"  {
-    /* fprintf(yyout, "MODULO (%d) ", MODULO); */
+    fprintf(yyout, "Operador reconococido --> %s (%d)\n\n", yytext, MODULO);
 }
 
 "**" {
-    /* fprintf(yyout, "POTENCIA (%d) ", POTENCIA); */
+    fprintf(yyout, "Operador reconococido --> %s (%d)\n\n", yytext, POTENCIA);
 }
 
 "||" {
-    /* fprintf(yyout, "CONCATENACION (%d) ", CONCATENACION); */
+    fprintf(yyout, "Operador reconococido --> %s (%d)\n\n", yytext, CONCATENACION);
 }
 
 "<"  {
-    /* fprintf(yyout, "MENOR_QUE (%d) ", MENOR_QUE); */
+    fprintf(yyout, "Operador reconococido --> %s (%d)\n\n", yytext, MENOR_QUE);
 }
 
 "<=" {
-    /* fprintf(yyout, "MENOR_IGUAL_QUE (%d) ", MENOR_IGUAL_QUE); */
+    fprintf(yyout, "Operador reconococido --> %s (%d)\n\n", yytext, MENOR_IGUAL_QUE);
 }
 
 ">"  {
-    /* fprintf(yyout, "MAYOR_QUE (%d) ", MAYOR_QUE); */
+    fprintf(yyout, "Operador reconococido --> %s (%d)\n\n", yytext, MAYOR_QUE);
 }
 
 ">=" {
-    /* fprintf(yyout, "MAYOR_IGUAL_QUE (%d) ", MAYOR_IGUAL_QUE); */
+    fprintf(yyout, "Operador reconococido --> %s (%d)\n\n", yytext, MAYOR_IGUAL_QUE);
 }
 
 "==" {
-    /* fprintf(yyout, "IGUAL (%d) ", IGUAL); */
+    fprintf(yyout, "Operador reconococido --> %s (%d)\n\n", yytext, IGUAL);
 }
 
 "!=" {
-    /* fprintf(yyout, "DISTINTO (%d) ", DISTINTO); */
+    fprintf(yyout, "Operador reconococido --> %s (%d)\n\n", yytext, DISTINTO);
 }
 
 "#o"  {
-    /* fprintf(yyout, "DISYUNCION_LOGICA (%d) ", DISYUNCION_LOGICA); */
+    fprintf(yyout, "Operador reconococido --> %s (%d)\n\n", yytext, DISYUNCION_LOGICA);
 }
 
 "#y"  {
-    /* fprintf(yyout, "CONJUNCION_LOGICA (%d) ", CONJUNCION_LOGICA); */
+    fprintf(yyout, "Operador reconococido --> %s (%d)\n\n", yytext, CONJUNCION_LOGICA);
 }
 
 "#no" {
-    /* fprintf(yyout, "NEGACION_LOGICA (%d) ", NEGACION_LOGICA); */
+    fprintf(yyout, "Operador reconococido --> %s (%d)\n\n", yytext, NEGACION_LOGICA);
 }
 
 ";" {
-    /* fprintf(yyout, "FIN_SENTENCIA (%d) ", FIN_SENTENCIA); */
+    fprintf(yyout, "Token reconococido --> %s (%d)\n\n", yytext, FIN_SENTENCIA);
 }
 
 "(" {
-    /* fprintf(yyout, "PARENTESIS_IZQ (%d) ", PARENTESIS_IZQ); */
+    fprintf(yyout, "Token reconococido --> %s (%d)\n\n", yytext, PARENTESIS_IZQ);
 }
 
 ")" {
-    /* fprintf(yyout, "PARENTESIS_DER (%d) ", PARENTESIS_DER); */
+    fprintf(yyout, "Token reconococido --> %s (%d)\n\n", yytext, PARENTESIS_DER);
 }
 
 {identificador} {
-    /* fprintf(yyout, "ID (%s) ", yytext); */
+    fprintf(yyout, "Identificador reconococido --> %s\n", yytext);
 }
 
 {numero} {
-    /* fprintf(yyout, "Numero (%s) ", yytext); */
+    fprintf(yyout, "Numero reconococido --> %s\n", yytext);
 }
 
 {cadena} {
@@ -235,16 +235,15 @@ fin_para {
     yyleng--;
 
     /* Se ha reconocido una cadena */
-    /* fprintf(yyout, "Cadena reconocida: %s ", yytext); */
+    fprintf(yyout, "Cadena reconocida: %s\n", yytext);
 }
 
-" " {
+" "|[\t\n\r\f\v] {
     /* Ignorar los espacios en blanco */
 }
 
 . {
-    fprintf(yyout, "Error: Caracter no reconocido ('%s') en la linea %d\n", yytext, yylineno);
-    return 0;
+    fprintf(yyout, "Error: Caracter no reconocido --> %s\n", yytext);
 }
 
 %%

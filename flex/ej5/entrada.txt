@@ -1,4 +1,4 @@
-inicio
+INICIO
     hola := 2;
     leer(HOLA);
 fin
