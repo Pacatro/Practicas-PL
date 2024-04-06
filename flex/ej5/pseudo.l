@@ -17,7 +17,6 @@ cadena \'([^'\\]|\\.)*\'
 
 %%
 
-
 !!.* {
     fprintf(yyout, "Comentario de una linea reconocido");
 }
@@ -164,7 +163,6 @@ fin_para {
 "**" {
     fprintf(yyout, "POTENCIA: %d\n", POTENCIA);
 }
-
 
 "||" {
     fprintf(yyout, "CONCATENACION: %d\n", CONCATENACION);
