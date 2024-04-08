@@ -17,11 +17,11 @@
 }
 
 "apagar" {
-    fprintf(yyout, "Secuencia incorrecta\n");
+    fprintf(yyout, "Secuencia incorrecta --> %s\n", yytext);
 }
 
 <Q1>"encender" { 
-    fprintf(yyout, "Secuencia incorrecta (Q1)\n");
+    fprintf(yyout, "Secuencia incorrecta (Q1) --> %s\n", yytext);
     /* Se mantiene en Q1 */
 }
 
@@ -56,7 +56,7 @@
 }
 
 <Q2>"apagar" { 
-    fprintf(yyout, "Secuencia incorrecta (Q2)\n");
+    fprintf(yyout, "Secuencia incorrecta (Q2) --> %s\n", yytext);
     /* Se mantiene en Q2 */
 }
 

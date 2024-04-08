@@ -1,4 +1,4 @@
-# Si se desea generar comentario-AFD-1.exe entonces teclear 
+# Si se desea generar ejemplo1.exe entonces teclear 
 #  make
 #
 # Si se desea generar otro "ejemplo" entonces teclear 
@@ -41,8 +41,7 @@ lex.yy.c: $(NAME).l
 	@echo "Generating" $@
 	@flex $<
 
+.PHONY: clean
 clean:
 	@echo "--> Deleting object files"
 	@rm -f lex.yy.c *.o
-
-

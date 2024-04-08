@@ -13,3 +13,11 @@ Frenando... (Q2)
 Cambiando... (Pasa a Q1)
 
 Coche apagado
+
+Coche encendido
+
+Secuencia incorrecta (Q1) --> encender
+
+Embragando... (Pasa a Q2)
+
+Secuencia incorrecta (Q2) --> apagar
