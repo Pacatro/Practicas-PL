@@ -112,5 +112,8 @@ int main(int argc, char **argv) {
     /*fprintf(yyout, "Numero total de documentos enviados: %d\n", total_docs);
     fprintf(yyout, "Numero medio de documentos enviados: %f\n", (float)cont_doc/total_docs);*/
 
+    fclose(yyin);
+    fclose(yyout);
+
     return 0;
 }

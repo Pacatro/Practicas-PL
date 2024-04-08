@@ -45,6 +45,9 @@ int main(int argc, char **argv) {
     yylex();
 
     fprintf(yyout, "\nNumero de correos validos: %d\n", cont);
+
+    fclose(yyin);
+    fclose(yyout);
     
     return 0;
 }

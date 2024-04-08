@@ -106,5 +106,8 @@ int main(int argc, char **argv) {
 
     yylex();
 
+    fclose(yyin);
+    fclose(yyout);
+
     return 0;
 }

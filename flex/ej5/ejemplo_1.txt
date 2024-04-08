@@ -1,0 +1,25 @@
+<<
+Algoritmo iterativo para el calculo de un factorial para n >= 0
+
+Formula del factorial --> n! = n * (n-1) * (n-2) * ... * 1
+
+Si n = 0 --> 0! = 1
+>>
+
+inicio
+    escribir('Introduce un numero entero positivo: ');
+    leer(num);
+
+    !! Declaramos una variable fact y le asignamos el numero 1
+    fact := 1;
+
+    !! num debe ser > 0
+    si num > 0
+        !! Asignamos a fact el valor de 1 * 2 * ... * num
+        para i desde 1 hasta num
+            fact := fact * i;
+        fin_para;
+    fin_si;
+
+    escribir(num || '! = ' || fact); !! num! = fact
+fin
