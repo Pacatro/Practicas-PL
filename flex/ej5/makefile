@@ -4,7 +4,7 @@
 # Si se desea generar otro "ejemplo" entonces teclear 
 #            make NAME=ejemplo
 
-NAME = pseudo
+NAME = pseudocodigo
 
 # Directives for the compiler
 # -c: the output is an object file, the linking stage is not done.

@@ -1,19 +1,28 @@
+Comentario de una linea reconocido --> !! Programa que calcula la raíz de un numero usando método de Newton
+
 Comentario multilinea reconocido con exito:
 <<
-Algoritmo iterativo para el calculo de un factorial para n >= 0
+  Descripcion:
+         Raiz cuadrada de Newton
 
-Formula del factorial --> n! = n * (n-1) * (n-2) * ... * 1
+         Se genera la siguiente sucesión de numeros x_n:
+            x_0 = ( numero + 1.0 ) / 2.0
+            x_n = 0.5 * (x_(n-1) + numero / x_(n-1))
 
-Si n = 0 --> 0! = 1
+         De forma que:
+            lim x_n = raíz_cuadrada (numero)
+             n -> infinito
 >>
 
 Token reconococido --> 'inicio' (257)
+
+Comentario de una linea reconocido --> !! Se pide el numero al que calcular la raíz.
 
 Token reconococido --> 'escribir' (260)
 
 Token reconococido --> '(' (299)
 
-Cadena reconocida --> Introduce un numero entero positivo: 
+Cadena reconocida --> Introduce un numero positivo: 
 
 Token reconococido --> ')' (300)
 
@@ -23,63 +32,143 @@ Token reconococido --> 'leer' (259)
 
 Token reconococido --> '(' (299)
 
-Identificador reconococido --> 'num'
+Identificador reconococido --> 'numero'
 
 Token reconococido --> ')' (300)
 
 Token reconococido --> ';' (298)
 
-Comentario de una linea reconocido --> !! Declaramos una variable fact y le asignamos el numero 1
-
-Identificador reconococido --> 'fact'
-
-Operador reconococido --> ':=' (274)
-
-Numero reconococido --> '1'
-
-Token reconococido --> ';' (298)
-
-Comentario de una linea reconocido --> !! num debe ser > 0
-
 Token reconococido --> 'si' (261)
 
-Identificador reconococido --> 'num'
+Token reconococido --> '(' (299)
 
-Operador reconococido --> '>' (291)
+Identificador reconococido --> 'numero'
+
+Operador reconococido --> '<' (289)
 
 Numero reconococido --> '0'
 
-Comentario de una linea reconocido --> !! Asignamos a fact el valor de 1 * 2 * ... * num
+Token reconococido --> ')' (300)
 
-Token reconococido --> 'para' (270)
+Token reconococido --> 'entonces' (262)
 
-Identificador reconococido --> 'i'
+Token reconococido --> 'escribir' (260)
 
-Token reconococido --> 'desde' (271)
+Token reconococido --> '(' (299)
 
-Numero reconococido --> '1'
+Cadena reconocida --> El numero no puede ser negativo
 
-Token reconococido --> 'hasta' (272)
+Operador reconococido --> '||' (288)
 
-Identificador reconococido --> 'num'
+Cadena reconocida --> \n
 
-Identificador reconococido --> 'fact'
+Token reconococido --> ')' (300)
+
+Token reconococido --> ';' (298)
+
+Token reconococido --> 'si_no' (263)
+
+Comentario de una linea reconocido --> !! Se pide el numero de iteraciones.
+
+Token reconococido --> 'escribir' (260)
+
+Token reconococido --> '(' (299)
+
+Cadena reconocida --> Introduce el numero de iteraciones: 
+
+Token reconococido --> ')' (300)
+
+Token reconococido --> ';' (298)
+
+Token reconococido --> 'leer' (259)
+
+Token reconococido --> '(' (299)
+
+Identificador reconococido --> 'iteraciones'
+
+Token reconococido --> ')' (300)
+
+Token reconococido --> ';' (298)
+
+Comentario de una linea reconocido --> !! Comienzan las iteraciones.
+
+Identificador reconococido --> 'x0'
 
 Operador reconococido --> ':=' (274)
 
-Identificador reconococido --> 'fact'
+Token reconococido --> '(' (299)
 
-Operador reconococido --> '*' (283)
+Identificador reconococido --> 'numero'
+
+Operador reconococido --> '+' (279)
+
+Numero reconococido --> '1.0'
+
+Token reconococido --> ')' (300)
+
+Operador reconococido --> '/' (284)
+
+Numero reconococido --> '2.0'
+
+Token reconococido --> ';' (298)
 
 Identificador reconococido --> 'i'
 
+Operador reconococido --> ':=' (274)
+
+Numero reconococido --> '1'
+
 Token reconococido --> ';' (298)
 
-Token reconococido --> 'fin_para' (273)
+Token reconococido --> 'repetir' (268)
+
+Identificador reconococido --> 'x0'
+
+Operador reconococido --> ':=' (274)
+
+Numero reconococido --> '0.5'
+
+Operador reconococido --> '*' (283)
+
+Token reconococido --> '(' (299)
+
+Identificador reconococido --> 'x0'
+
+Operador reconococido --> '+' (279)
+
+Identificador reconococido --> 'numero'
+
+Operador reconococido --> '/' (284)
+
+Identificador reconococido --> 'x0'
+
+Token reconococido --> ')' (300)
 
 Token reconococido --> ';' (298)
 
-Token reconococido --> 'fin_si' (264)
+Identificador reconococido --> 'i'
+
+Operador reconococido --> ':=' (274)
+
+Identificador reconococido --> 'i'
+
+Operador reconococido --> '+' (279)
+
+Numero reconococido --> '1'
+
+Token reconococido --> ';' (298)
+
+Token reconococido --> 'hasta_que' (269)
+
+Token reconococido --> '(' (299)
+
+Identificador reconococido --> 'i'
+
+Operador reconococido --> '>' (291)
+
+Identificador reconococido --> 'iteraciones'
+
+Token reconococido --> ')' (300)
 
 Token reconococido --> ';' (298)
 
@@ -87,21 +176,39 @@ Token reconococido --> 'escribir' (260)
 
 Token reconococido --> '(' (299)
 
-Identificador reconococido --> 'num'
-
-Operador reconococido --> '||' (288)
-
-Cadena reconocida --> ! = 
-
-Operador reconococido --> '||' (288)
-
-Identificador reconococido --> 'fact'
+Cadena reconocida --> La aproximacion a la raiz cuadrada de 
 
 Token reconococido --> ')' (300)
 
 Token reconococido --> ';' (298)
 
-Comentario de una linea reconocido --> !! num! = fact
+Token reconococido --> 'escribir' (260)
+
+Token reconococido --> '(' (299)
+
+Identificador reconococido --> 'numero'
+
+Operador reconococido --> '||' (288)
+
+Cadena reconocida -->  es 
+
+Operador reconococido --> '||' (288)
+
+Identificador reconococido --> 'x0'
+
+Operador reconococido --> '||' (288)
+
+Cadena reconocida --> \n
+
+Token reconococido --> ')' (300)
+
+Token reconococido --> ';' (298)
+
+Token reconococido --> 'fin_si' (264)
+
+Token reconococido --> ';' (298)
 
 Token reconococido --> 'fin' (258)
+
+Token reconococido --> ';' (298)
 
