@@ -150,10 +150,6 @@ fin_para|FIN_PARA { fprintf(yyout, "Token reconococido --> '%s' (%d)\n\n", yytex
 
 [^{identificador}] { fprintf(yyout, "Error: Identificador no reconocido --> '%s'\n\n", yytext); }
 
-[^{numero}] { fprintf(yyout, "Error: Numero no reconocido --> '%s'\n\n", yytext); }
-
-[^{cadena}] { fprintf(yyout, "Error: Cadena no reconocido --> '%s'\n\n", yytext); }
-
 . { fprintf(yyout, "Error: Caracter no reconocido --> %s\n\n", yytext); }
 
 %%
